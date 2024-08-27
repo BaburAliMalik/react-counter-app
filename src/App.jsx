@@ -16,8 +16,14 @@ function App() {
   // subtract counter
 
   function removeCounter() {
-    setNum(num -= 1);
-  }
+    if (num > 0){
+      setNum( num -= 1)
+    }else{
+      alert("already zero")
+    }
+      
+    }
+  
 
   // set counter
 
@@ -26,11 +32,19 @@ function App() {
   }
   return (
     <>
-      <h1>Hello World , This is a React Counter</h1>
+      
+        <h1 class = "text-center text-dark mt-[2rem]">Hello World , This is a React Counter</h1>
+      <div className="text-center mt-[2rem]">
       <p>{num}</p>
-      <button onClick={addCounter}>+</button>
-      <button onClick={ setCounter}>Set</button>
-      <button onClick={removeCounter}>-</button>
+      </div>
+     <div className="flex justify-center items-center mt-[2rem]">
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full mr-3"
+       onClick={addCounter}>Increase</button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-3"
+       onClick={ setCounter}>Set</button>
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+       onClick={removeCounter}>Decrease</button>
+     </div>
     </>
   )
 }
